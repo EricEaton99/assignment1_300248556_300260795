@@ -75,9 +75,10 @@ public class PointCP5Test
     System.out.println("In Cartesian it is: " + pointCP2.getX() + ", " + pointCP2.getY());
     System.out.println("");
 
-    long[] results = runManyNTimes(1000000, pointCP2);
+    int n = 100000;
+    long[] results = runManyNTimes(n, pointCP2);
     for(int i=0;i< results.length;i++){
-      System.out.println("result "+i+" took: "+ ((double) results[i] / 1_000_000_000)+" s");
+      System.out.println("result "+i+" took: "+ ((double) results[i] / n)+" ns");
     }
 
     System.out.println("");
@@ -85,9 +86,9 @@ public class PointCP5Test
     System.out.println("In Polar it is: " + pointCP3.getRho() +", "+ pointCP3.getTheta());
     System.out.println("");
 
-    results = runManyNTimes(1000000, pointCP3);
+    results = runManyNTimes(n, pointCP3);
     for(int i=0;i< results.length;i++){
-      System.out.println("result "+i+" took: "+ ((double) results[i] / 1_000_000_000)+" s");
+      System.out.println("result "+i+" took: "+ ((double) results[i] / n)+" ns");
     }
 
 
